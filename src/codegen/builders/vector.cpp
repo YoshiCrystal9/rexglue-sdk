@@ -347,6 +347,12 @@ bool build_vmaxsh(BuilderContext& ctx)
     return true;
 }
 
+bool build_vmaxsb(BuilderContext& ctx)
+{
+    ctx.emit_vec_int_binary("max_epi8", "s8");
+    return true;
+}
+
 bool build_vminsh(BuilderContext& ctx)
 {
     ctx.emit_vec_int_binary("min_epi16", "s16");
