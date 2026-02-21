@@ -359,6 +359,12 @@ bool build_vminsh(BuilderContext& ctx)
     return true;
 }
 
+bool build_vminsb(BuilderContext& ctx)
+{
+    ctx.emit_vec_int_binary("min_epi8", "s8");
+    return true;
+}
+
 bool build_vminsw(BuilderContext& ctx)
 {
     ctx.emit_vec_int_binary("min_epi32", "s32");
