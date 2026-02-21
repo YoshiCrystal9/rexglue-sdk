@@ -317,9 +317,21 @@ bool build_vsubuws(BuilderContext& ctx)
     return true;
 }
 
+bool build_vsubuhs(BuilderContext& ctx)
+{
+    ctx.emit_vec_int_binary("subs_epu16", "u16");
+    return true;
+}
+
 bool build_vsubuhm(BuilderContext& ctx)
 {
     ctx.emit_vec_int_binary("sub_epi16", "u8");
+    return true;
+}
+
+bool build_vsubuwm(BuilderContext& ctx)
+{
+    ctx.emit_vec_int_binary("sub_epi32", "u32");
     return true;
 }
 
@@ -341,6 +353,12 @@ bool build_vminsh(BuilderContext& ctx)
     return true;
 }
 
+bool build_vminsw(BuilderContext& ctx)
+{
+    ctx.emit_vec_int_binary("min_epi32", "s32");
+    return true;
+}
+
 bool build_vmaxuh(BuilderContext& ctx)
 {
     ctx.emit_vec_int_binary("max_epu16", "u16");
@@ -359,6 +377,11 @@ bool build_vmaxub(BuilderContext& ctx)
     return true;
 }
 
+bool build_vsubsbs(BuilderContext& ctx)
+{
+    ctx.emit_vec_int_binary("subs_epi8", "s8");
+    return true;
+}
 
 bool build_vsubshs(BuilderContext& ctx)
 {
